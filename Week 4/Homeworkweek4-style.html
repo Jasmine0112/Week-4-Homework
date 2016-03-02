@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Crystal game</title>
+  <HEAD> Game On!</HEAD>
+  <style type="text/css">
+      /*
+          we threw in some styling to make the picture fit on the page better
+    */
+    .crystalImage {
+      width: 300px;
+      height: 300px;
+      padding-right: 23px
+    }
+    .container {background: yellow;
+      width:1200px;
+      height: 1000px;
+      padding-left: 75px
+    }
+
+    .background {color: red}
+    .thefirstdive {background:url(https://www.google.com/search?q=GOLD+PIECES&biw=1440&bih=862&source=lnms&tbm=isch&sa=X&ved=0ahUKEwio2bi7s6DLAhVKdj4KHZhmDWAQ_AUIBygC#tbm=isch&q=ground+clipart&imgrc=eRpFIm7Z3y6MzM%3A)}
+  </style>
+</head>
+<body class="bodybackground">
+  <div class= "background">
+    <div class="container">
+
+      <div class="thefirstdive"></div>
+      <div class="theseconddiv"></div>
+       
+
+<p><span id="number"></span></p>
+
+<p><span id="yourNumber"></span></p>
+
+<div id="crystals">
+</div>
+
+<!-- we added jQuery -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+<script type="text/javascript">
+  $( document ).ready(function() {
+    var numberToGuess = 53;
+    var counter = 0;
+    var numbers = [10, 5, 3, 7];
+    $('#number').text(numberToGuess);
+    for (var i=0; i< numbers.length; i++){
+      var imageCrystal = $('<img>');
+      
+      imageCrystal.attr('data-num', numbers[i]);
+      imageCrystal.attr('src', 'http://cdn.playbuzz.com/cdn/35910209-2844-45c0-b099-f4d82878d54f/00261fda-4062-4096-81fd-8cf96b9034e8.jpg');
+      imageCrystal.attr('alt', 'crystals');
+      imageCrystal.addClass('crystalImage');
+      $('#crystals').append(imageCrystal);
+    }
+    
+    $('.crystalImage').on('click', function(){
+      counter = counter + parseInt($(this).data('num'));
+      
+      $('#yourNumber').text(counter);
+      if (counter == numberToGuess){
+        alert('You won!!!!');
+      }else if( counter > numberToGuess){
+        alert('You lost!');
+      }
+    });
+  });
+</script>
+</body>
+</html>

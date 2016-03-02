@@ -1,0 +1,79 @@
+<!doctype>
+<html>
+  <head>
+  //<style type="text/css"></style>
+  #header {text-align:Center;
+  Color: Red}
+  #content {background:white}
+         <title> First Java Game </title>
+
+  </head
+    <body>
+    <h1> IT's TIME TO PLAY</h1>
+    <P> Select a Letter and build a word</P> 
+        <div>
+        }="header
+        {background: blue;20px
+        Color: yellow
+        Margin:20 px}     
+        <div> ="header"
+      <h1>Ibrahim's Game</h1></div><hr></hr>
+      <p> The Game is On</p>
+      <div> id= "content"
+<img src="asset/Gameon.png">
+</div>
+<div> id="footer"
+<footer>Come Again!!</footer> 
+</div>
+   </body>
+<script type="text/javascript">
+// Sets the computer choices 
+var computerChoices = ['A','B''C','D','E','F','G','H' 'I''r', 'p', 's'];
+// Declares the tallies to 0 
+var wins = 0;
+var losses = 0;
+var ties = 0;
+// When the user presses the key it records the keypress and then sets it to userguess
+document.onkeyup = function(event) {
+    //var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+    // This sets the computer guess equal to the random.
+    //var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+    // Making sure the user chooses r, p, or s
+    if ((userGuess == 'r') || (userGuess == 'p') || (userGuess == 's')){
+        // It tests to determine if the computer or the user won the round and then increments 
+        if ((userGuess == 'r') && (computerGuess == 'A'))&& (computerGuess == 'B')){
+            wins++;
+            if ((userGuess == 'H') && (userGuess == 'A'))&& (userGuess == 'T')){
+            wins++;
+        }else if ((userGuess == 'y') && (computerGuess == 'e'))&&(userGuess=='s'))  {
+  wins++;
+        //}else if ((userGuess == 's') && (computerGuess == 'r')){
+            losses++;
+        //}else if ((userGuess == 's') && (computerGuess == 'p')){
+            wins++;
+       //}else if ((userGuess == 'p') && (computerGuess == 'r')){
+            wins++;
+        //}else if ((userGuess == 'p') && (computerGuess == 's')){
+            losses++;
+        //}else if (userGuess == computerGuess){
+            ties++;
+        //}  
+        // Taking the tallies and displaying them in HTML
+        var html = "<p>Press r, p or s to start playing</p>" +
+        "<p>wins: " + 
+        wins + 
+        "</p>" +
+        "<p>losses: " + 
+        losses + 
+        "</p>" +
+        "<p>ties: " + 
+        ties + 
+        "You guessed: "+userGuess+" Computer guessed: "+computerGuess+"</p>";
+        // Placing the html into the game ID
+        document.querySelector('#game').innerHTML = html;
+
+        if(userGuess=='r'){
+            document.querySelector('#rocpic').style.display='block';
+        }else{
+            document.querySelector('#rocpic').style.display='none';
+</html>
